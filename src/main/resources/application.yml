@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test;AUTO_SERVER=TRUE
+    username: sa
+    password: 123456
+    driver-class-name: org.h2.Driver
+
+  h2:
+    console:
+      settings:
+        web-allow-others: true
+      path: /h2-console
+      enabled: true
+
+  jpa:
+    database: h2
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      platform: h2
+      schema-locations: db/schema.sql
+
